@@ -39,7 +39,8 @@ The dataset contains variables related to:
 - loan characteristics;
 - applicant socio-economic profile;
 - credit risk indicators;
-- approval and fraud indicators.
+- loan approval status;
+- fraud indicators.
 
 The business objective is to complement traditional credit scoring with early detection of suspicious applications, in order to improve risk monitoring, fraud screening and data quality.
 
@@ -60,7 +61,7 @@ The project includes the following steps:
 
 ## Evaluation Metrics
 
-Because fraud represents only a small fraction of the observations, standard accuracy is misleading.
+Because fraud represents only a small fraction of the observations, standard accuracy can be misleading.
 
 The project therefore uses several imbalance-aware metrics:
 
@@ -79,7 +80,7 @@ The project therefore uses several imbalance-aware metrics:
 
 The results highlight the limitations of purely unsupervised anomaly detection for this fraud detection problem.
 
-Isolation Forest performs weakly because the fraudulent applications do not appear as simple marginal outliers. Instead, fraud appears to be more contextual, depending on combinations of variables and the consistency between the applicant profile and the loan purpose.
+Isolation Forest performs weakly because the fraudulent applications do not appear as simple marginal outliers. Instead, fraud appears to be more contextual, depending on combinations of variables and on the consistency between the applicant profile and the loan purpose.
 
 Supervised models with explicit class imbalance handling, especially Random Forest with class weights and XGBoost combined with SMOTEENN and threshold adjustment, provide better results than the optimized Isolation Forest variants.
 
@@ -88,26 +89,33 @@ The project shows that the limited performance of Isolation Forest is not necess
 ## Repository Structure
 
 ```text
-report/
-  Data_Science_Anomaly_Detection_Report_FR.pdf
-
 notebooks/
-  README.md
+  01_isolation_forest_fraud_detection.ipynb
+  02_critical_analysis_and_limitations.ipynb
 
 data/
-  README.md
+  loan_applications.csv
+
+report/
+  Data_Science_Anomaly_Detection_Report_FR.pdf
 
 requirements.txt
 README.md
 ```
 
-The original academic report is currently written in French. This README provides an English summary of the project for international readability.
+The original academic report is written in French. This README provides an English summary of the project for international readability.
 
-## Current Status
+## Data
 
-The academic report has been added to the repository.
+The dataset used in this project comes from a public loan application dataset used for fraud detection analysis.
 
-The notebooks and source files will be added later after cleaning, restructuring and verification that no restricted data or confidential material is included.
+The raw dataset is included as:
+
+```text
+data/loan_applications.csv
+```
+
+The processed dataset is generated within the notebooks during the preprocessing step and is not stored separately in this repository.
 
 ## Tech Stack
 
