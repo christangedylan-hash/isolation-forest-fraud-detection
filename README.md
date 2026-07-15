@@ -94,6 +94,7 @@ notebooks/
   02_critical_analysis_and_limitations.ipynb
 
 data/
+  README.md
   loan_applications.csv
 
 report/
@@ -116,6 +117,23 @@ data/loan_applications.csv
 ```
 
 The processed dataset is generated within the notebooks during the preprocessing step and is not stored separately in this repository.
+
+## How to Run
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Then open the notebooks:
+
+```text
+notebooks/01_isolation_forest_fraud_detection.ipynb
+notebooks/02_critical_analysis_and_limitations.ipynb
+```
+
+The notebooks contain the main analysis, model training, evaluation metrics and critical discussion of the results.
 
 ## Tech Stack
 
